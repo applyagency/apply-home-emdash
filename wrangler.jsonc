@@ -1,0 +1,27 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "apply-home-emdash",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "apply-home-emdash-d1",
+			// Run `wrangler d1 create my-emdash-site` and paste the real ID here for deploy
+			"database_id": "7d246d5b-617f-40b8-a7cf-5eb9dd34bfa7",
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "apply-home-emdash-media","preview_bucket_name": "apply-home-emdash-media",
+		},
+	],
+	// Worker Loader for plugin sandboxing
+	"worker_loaders": [
+		{
+			"binding": "LOADER",
+		},
+	],
+}
